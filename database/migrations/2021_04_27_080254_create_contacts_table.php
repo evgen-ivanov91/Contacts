@@ -28,6 +28,7 @@ class CreateContactsTable extends Migration
             $table->string('position',30)->nullable();
             $table->string('work_email',40)->nullable();
             $table->unsignedBigInteger('group_id')->nullable();
+            $table->foreign('group_id')->references('id')->on('groups');
             $table->text('comment')->nullable();
             $table->boolean('favourites')->default(0)->nullable();
             $table->timestamps();
